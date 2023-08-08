@@ -1,0 +1,29 @@
+.audio__container{
+    position: absolute;
+    z-index: 100;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    align-items: center;
+    padding-top: 50px;
+    row-gap: 15px;
+    font-family: monospace;
+    input{
+        display: none;
+    }
+
+    .label__audio{
+        display: grid;
+        place-items: center;
+        font-weight: bold;
+        font-size: 20px;
+        background-color: rgb(75, 75, 255);
+        height:50px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-radius: 5px 5px 5px 5px;
+        cursor: pointer;
+    }
+    
+}
