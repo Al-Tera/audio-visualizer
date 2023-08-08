@@ -1,7 +1,7 @@
 import { Canvas, useLoader } from '@react-three/fiber'
 import './App.scss'
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
-import { ChangeEvent, Suspense, useEffect, useRef, useState } from 'react'
+import { ChangeEvent, Suspense, useRef, useState } from 'react'
 import Scene from './Components/Scene'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
@@ -33,16 +33,6 @@ function App() {
     const file = event?.target?.files?.[0];
     if(file) setAudioFile({name: file.name, file: URL.createObjectURL(file), type: file.type})
   }
-
-  useEffect(()=>{
-    if(gltf){
-      const sortedArray = Object.values(gltf.scene.children).sort((a:any,b:any)=>
-        a.name.slice(4)-b.name.slice(4)
-      )
-      gltf.scene.position.y = -5
-      gltf.scene.children = sortedArray
-    }
-  },[gltf])
 
   const handleAudioVisualizer = () => {
     if(audioFile && audioRef.current){
@@ -91,7 +81,6 @@ function App() {
       <Suspense>
         <Canvas className='the__canvas' shadows>
           <View />
-          {/* <Model /> */}
           <Scene gltf={gltf} />
         </Canvas>
       </Suspense>
