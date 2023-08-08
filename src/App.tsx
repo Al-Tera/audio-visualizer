@@ -17,7 +17,7 @@ const View = () => {
 }
 
 function App() {
-  const gltf = useLoader(GLTFLoader, '../public/MusicSquare.gltf')
+  const gltf = useLoader(GLTFLoader, '/audio-visualizer/musicSquare.gltf')
   
   const [audioFile, setAudioFile] = useState<any>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
